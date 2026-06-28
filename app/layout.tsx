@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import { Suspense } from "react";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
+
+const gaMeasurementId = "G-CHYCMD13LT";
 
 export const metadata: Metadata = {
   title: "Braxton McKee | Personal Blog",
@@ -20,7 +25,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}', { send_page_view: false });
+          `}
+        </Script>
+        <Suspense fallback={null}>
+          <GoogleAnalytics measurementId={gaMeasurementId} />
+        </Suspense>
+      </body>
     </html>
   );
 }
