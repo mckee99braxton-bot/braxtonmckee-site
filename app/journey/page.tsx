@@ -61,7 +61,7 @@ export default function JourneyPage() {
     <PageShell>
       <div className="mx-auto w-full max-w-[1120px] px-5 pb-8 pt-16 sm:px-8 md:pt-24">
         <article className="max-w-[780px]">
-          <h1 className="font-serif text-5xl leading-tight text-ink sm:text-6xl">
+          <h1 className="display-type text-6xl leading-none text-ink sm:text-7xl">
             My Journey
           </h1>
 
@@ -70,7 +70,7 @@ export default function JourneyPage() {
               <p
                 className={
                   emphasizedLines.has(paragraph)
-                    ? "my-8 font-serif text-2xl leading-tight text-ink"
+                    ? "editorial-serif my-8 text-2xl font-semibold leading-tight text-ink"
                     : undefined
                 }
                 key={paragraph}
@@ -95,7 +95,7 @@ export default function JourneyPage() {
               <p
                 className={
                   emphasizedLines.has(paragraph)
-                    ? "my-8 font-serif text-2xl leading-tight text-ink"
+                    ? "editorial-serif my-8 text-2xl font-semibold leading-tight text-ink"
                     : undefined
                 }
                 key={paragraph}
