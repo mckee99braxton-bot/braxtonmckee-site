@@ -9,8 +9,8 @@ type ButtonLinkProps = {
 
 const styles = {
   dark: "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
-  light: "border-[var(--line)] bg-transparent text-ink hover:border-ink",
-  blue: "border-white/25 bg-white text-[var(--wash)] hover:bg-transparent hover:text-white",
+  light: "border-[var(--line)] bg-transparent text-ink hover:border-[var(--wash)] hover:text-[var(--wash)]",
+  blue: "border-[var(--wash)] bg-[var(--wash)] text-paper hover:bg-transparent hover:text-[var(--wash)]",
 };
 
 export function ButtonLink({ href, children, variant = "light", external }: ButtonLinkProps) {
