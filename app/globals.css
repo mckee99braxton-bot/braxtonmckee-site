@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f6f4f1;
+  --ink: #111111;
+  --muted: #686866;
+  --line: #d7d2ca;
+  --concrete: #a6a6a4;
+  --wash: #587a96;
+  --safety: #c76a3a;
+  --white: #fffdf9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, "Source Sans 3", Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(199, 106, 58, 0.22);
+}
+
+.display-type {
+  font-family: "Arial Narrow", Oswald, Impact, sans-serif;
+  font-stretch: condensed;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.story-copy p {
+  margin: 0 0 1.45rem;
+}
+
+.story-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--wash);
+  outline-offset: 4px;
+}
