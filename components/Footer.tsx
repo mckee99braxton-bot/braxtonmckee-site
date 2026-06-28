@@ -4,7 +4,7 @@ const linkedInUrl = "https://www.linkedin.com/in/braxton-mckee-mba-b1a4a9228/";
 
 export function Footer() {
   return (
-    <footer className="mx-auto w-full max-w-[1120px] border-t border-[var(--line)] px-5 py-8 sm:px-8">
+    <footer className="mx-auto w-full max-w-[1120px] border-t soft-divider px-5 py-8 sm:px-8">
       <div className="flex flex-col gap-4 text-sm sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-semibold">Braxton McKee</p>
@@ -13,12 +13,12 @@ export function Footer() {
             This is a personal project created entirely with AI and a little vibe coding.
           </p>
         </div>
-        <nav className="flex gap-5 text-sm text-[var(--muted)]">
-          <Link className="focus-ring hover:text-[var(--wash)]" href="/writing">
+        <nav className="flex gap-5 text-sm font-semibold text-[var(--muted)]">
+          <Link className="focus-ring border-b border-transparent pb-1 hover:border-[var(--wash)] hover:text-[var(--wash)]" href="/writing">
             Insights
           </Link>
           <a
-            className="focus-ring hover:text-[var(--wash)]"
+            className="focus-ring border-b border-transparent pb-1 hover:border-[var(--wash)] hover:text-[var(--wash)]"
             href={linkedInUrl}
             rel="noreferrer"
             target="_blank"

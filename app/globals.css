@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --paper: #f6f4f1;
-  --ink: #111111;
-  --muted: #686866;
-  --line: #d7d2ca;
+  --paper: #f6f1e9;
+  --ink: #071d32;
+  --muted: #5f6870;
+  --line: rgba(7, 29, 50, 0.16);
   --concrete: #a6a6a4;
-  --wash: #587a96;
+  --wash: #2f6f9d;
+  --wash-soft: #a9bdca;
+  --paper-deep: #ebe4d9;
   --safety: #c76a3a;
   --white: #fffdf9;
 }
@@ -23,7 +25,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(7, 29, 50, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(7, 29, 50, 0.018) 1px, transparent 1px),
+    var(--paper);
+  background-size: 42px 42px, 42px 42px, auto;
   color: var(--ink);
   font-family: Inter, "Source Sans 3", Arial, Helvetica, sans-serif;
   letter-spacing: 0;
@@ -35,15 +41,103 @@ a {
 }
 
 ::selection {
-  background: rgba(199, 106, 58, 0.22);
+  background: rgba(47, 111, 157, 0.2);
 }
 
 .display-type {
-  font-family: "Arial Narrow", Oswald, Impact, sans-serif;
+  font-family: "Arial Narrow", "Roboto Condensed", Oswald, Impact, sans-serif;
   font-stretch: condensed;
   font-weight: 900;
   letter-spacing: 0;
   line-height: 0.9;
+}
+
+.editorial-serif {
+  font-family: Georgia, "Source Serif 4", "Times New Roman", serif;
+}
+
+.hero-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-surface::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    repeating-radial-gradient(
+      ellipse at 25% 50%,
+      rgba(47, 111, 157, 0.11) 0,
+      rgba(47, 111, 157, 0.11) 1px,
+      transparent 2px,
+      transparent 34px
+    ),
+    linear-gradient(105deg, rgba(255, 253, 249, 0.72), rgba(246, 241, 233, 0.2) 58%);
+  opacity: 0.72;
+}
+
+.hero-surface::after {
+  position: absolute;
+  inset: 14px 0 auto;
+  z-index: -1;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(7, 29, 50, 0.18), transparent);
+}
+
+.wash-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.wash-underline::after {
+  position: absolute;
+  right: 0.03em;
+  bottom: 0.03em;
+  left: 0.03em;
+  height: 0.12em;
+  content: "";
+  border-bottom: 3px solid rgba(47, 111, 157, 0.92);
+  border-radius: 999px 40% 999px 42%;
+  transform: rotate(-1.5deg);
+}
+
+.field-note {
+  color: rgba(47, 111, 157, 0.36);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.field-note span {
+  display: block;
+  width: max-content;
+  border-bottom: 1px solid rgba(47, 111, 157, 0.22);
+}
+
+.soft-divider {
+  border-color: rgba(7, 29, 50, 0.14);
+}
+
+.cta-panel {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(105deg, rgba(7, 29, 50, 0.96), rgba(13, 51, 82, 0.94)),
+    var(--ink);
+}
+
+.cta-panel::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    repeating-linear-gradient(94deg, rgba(255, 253, 249, 0.04) 0 1px, transparent 1px 24px),
+    linear-gradient(90deg, rgba(169, 189, 202, 0.13), transparent 42%);
+  pointer-events: none;
 }
 
 .story-copy p {
