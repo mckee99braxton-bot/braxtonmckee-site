@@ -17,6 +17,9 @@ export function Footer() {
           <Link className="focus-ring border-b border-transparent pb-1 hover:border-[var(--wash)] hover:text-[var(--wash)]" href="/writing">
             Insights
           </Link>
+          <Link className="focus-ring border-b border-transparent pb-1 hover:border-[var(--wash)] hover:text-[var(--wash)]" href="/privacy">
+            Privacy
+          </Link>
           <a
             className="focus-ring border-b border-transparent pb-1 hover:border-[var(--wash)] hover:text-[var(--wash)]"
             href={linkedInUrl}
